@@ -41,7 +41,7 @@ dotnet add package YouTubeSessionGenerator
 using YouTubeSessionGenerator;
 using YouTubeSessionGenerator.Js.Environments;
 
-using NodeEnvironment myCustomJsEnvironment = new(); // Make sure this gets dispoed!
+using NodeEnvironment myCustomJsEnvironment = new(); // Make sure this gets disposed!
 
 YouTubeSessionConfig config = new()
 {
