@@ -8,9 +8,9 @@
 
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-		<Version>1.0.2</Version>
-		<AssemblyVersion>1.0.2</AssemblyVersion>
-		<FileVersion>1.0.2</FileVersion>
+		<Version>1.0.3</Version>
+		<AssemblyVersion>1.0.3</AssemblyVersion>
+		<FileVersion>1.0.3</FileVersion>
 
 		<Title>YouTube Session Generator</Title>
 		<Authors>IcySnex</Authors>
@@ -27,7 +27,8 @@
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<PackageReleaseNotes>
-			- Downgraded to TargetFramework to net8.0 (LTS)
+			- Updated confusing names/XML docs
+			- Added net10 support (multi-target)
 			- Updated packages
 		</PackageReleaseNotes>
 	</PropertyGroup>
