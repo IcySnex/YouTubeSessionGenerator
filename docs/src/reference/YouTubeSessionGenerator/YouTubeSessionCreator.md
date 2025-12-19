@@ -45,14 +45,14 @@ public Task<string> RolloutTokenAsync(
 Generates a Proof of Origin Token (PoToken) for a YouTube session.
 ```cs
 public Task<string> ProofOfOriginTokenAsync(
-  string visitorData, 
+  string identifier, 
   BotGuardContentBinding contentBinding, 
   CancellationToken cancellationToken)
 ```
 | Parameter | Summary |
 | --------- | ------- |
-| [`string`](https://learn.microsoft.com/dotnet/api/system.string) visitorData | The Visitor Data connected to this proof of origin token. |
-| *(optional)* [`BotGuardContentBinding`](/YouTubeSessionGenerator/reference/YouTubeSessionGenerator/BotGuard/BotGuardContentBinding.html) contentBinding | The content to which the Proof of Origin token is bound. |
+| [`string`](https://learn.microsoft.com/dotnet/api/system.string) identifier | The Visitor Data, Data Sync ID or Video ID connected to this proof of origin token. |
+| *(optional)* [`BotGuardContentBinding`](/YouTubeSessionGenerator/reference/YouTubeSessionGenerator/BotGuard/BotGuardContentBinding.html) contentBinding | The content to which the BotGuard snapshout is bound. |
 | *(optional)* [`CancellationToken`](https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken) cancellationToken | The token to cancel this task. |
 
 
