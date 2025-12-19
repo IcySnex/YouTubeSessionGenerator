@@ -85,8 +85,8 @@ public class YouTubeSessionCreator
     /// <summary>
     /// Generates a Proof of Origin Token (PoToken) for a YouTube session.
     /// </summary>
-    /// <param name="visitorData">The Visitor Data connected to this proof of origin token.</param>
-    /// <param name="contentBinding">The content to which the Proof of Origin token is bound.</param>
+    /// <param name="identifier">The Visitor Data, Data Sync ID or Video ID connected to this proof of origin token.</param>
+    /// <param name="contentBinding">The content to which the BotGuard snapshout is bound.</param>
     /// <param name="cancellationToken">The token to cancel this task.</param>
     /// <returns>The Proof of Origin Token.</returns>
     /// <exception cref="HttpRequestException">Occurs when the HTTP request fails.</exception>"
@@ -96,7 +96,7 @@ public class YouTubeSessionCreator
     /// <exception cref="JsException">Occurs when the JavaScript environment throws an error.</exception>
     /// <exception cref="OperationCanceledException">Occurs when this task was cancelled.</exception>
     public async Task<string> ProofOfOriginTokenAsync(
-        string visitorData,
+        string identifier,
         BotGuardContentBinding? contentBinding = null,
         CancellationToken cancellationToken = default)
     {
@@ -153,7 +153,7 @@ public class YouTubeSessionCreator
         byte[] integrityTokenBytes = integrityToken.ToBytesFromBase64();
         await botGuardClient.LoadMintAsync(integrityTokenBytes);
 
-        byte[] poTokenBytes = await botGuardClient.MintAsync(visitorData);
+        byte[] poTokenBytes = await botGuardClient.MintAsync(identifier);
         string poToken = poTokenBytes.ToBase64FromBytes(true);
 
         return poToken;
